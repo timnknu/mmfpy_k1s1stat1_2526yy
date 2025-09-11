@@ -1,12 +1,7 @@
-myvar = 782
-# print(myvar // 10)
-dight = myvar // 10
-print(myvar % 10)
-print(dight % 10)
-print(dight // 10)
+myvar = int(input("Enter the number"))
 
-print('------')
-print(myvar // 100)
+firstDigit = myvar // 100
 ost = myvar % 100
-print(ost // 10)
-print(ost % 10)
+secondDigit = ost // 10
+thirdDigit = ost % 10
+print(firstDigit * secondDigit * thirdDigit)
