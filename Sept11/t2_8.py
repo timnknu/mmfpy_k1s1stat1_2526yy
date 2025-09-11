@@ -1,11 +1,35 @@
-a, b = [int(d) for d in input().split()]
-print(a,b)
+# for eolymp:
+a, b, c = [int(d) for d in input().split()]
 
-if b>a:
-    print("b is larger than a")
-    print("b equals", b)
-else:
-    print("a is larger than b")
-    print("a equals", a)
+# a < b < c
+if a < b and b < c:
+    print(b)
+if c < b and b < a:
+    print(b)
 
-print("Ready!")
+if b < a and a < c:
+    print(a)
+if c < a and a < b:
+    print(a)
+
+if (a<c and c<b) or (b<c and c<a):
+    print(c)
+
+
+# a, b, c = [int(d) for d in input().split()]
+#
+# # a < b < c
+# if a < b and b < c:
+#     print("b equals", b)
+# if c < b and b < a:
+#     print("b equals", b)
+#
+# if b < a and a < c:
+#     print("a equals", a)
+# if c < a and a < b:
+#     print("a equals", a)
+#
+# if (a<c and c<b) or (b<c and c<a):
+#     print("c equals", c)
+#
+# print("Ready!")
