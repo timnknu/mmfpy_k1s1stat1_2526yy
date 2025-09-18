@@ -1,10 +1,11 @@
-a = 3
+a = 30
 b = 8
-
-# надрукувати число b кількість разів, рівну a
-s = 0
-while s < a :
+# накопичити у the_sum суму доданків, кожен з яких рівний b, а кількість доданків рівна a
+i = 0
+the_sum = 0
+while i < a :
+    the_sum = the_sum + b
     print(b)
-    s = s + 1
-
-print(s)
+    i = i + 1
+print("Result is:", the_sum)
+print("done!")
