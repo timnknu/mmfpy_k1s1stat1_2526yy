@@ -7,3 +7,4 @@ c = math.sqrt( (x3-x1)**2 + (y3-y1)**2 )
 #print(a, b, c)
 p = a + b + c
 print(f"Perimeter p={p:.5f}, a={a}, b={b:.2e}")
+# TODO: доробити

@@ -1,6 +1,7 @@
-n = 98075
+# частина 3.8 (з особливостями ;) )
+n = 32
 
-while n > 0 : # що, в даному випадку, можна задати і як n >= 1 (бо цифр є лише 0, 1, ..., 9)
-    last_digit = n % 10
-    print(last_digit)
-    n = n // 10
+while n > 0 :
+    last_digit = n % 2
+    print(last_digit, end='___')
+    n = n // 2
