@@ -1,16 +1,20 @@
 t = int(input()) # ввели кількість рядків, які ще належить зчитати із вхідних даних
 
+FLOWER_GERANIUM = 1
+FLOWER_CROCUS = 2
+FLOWER_VIOLET = 3
+
 for j in range(t):
     k = int(input())
-    # G <--> 2
-    # C <--> 8
-    # V <--> 9
+    # G <--> FLOWER_GERANIUM
+    # C <--> FLOWER_CROCUS
+    # V <--> FLOWER_VIOLET
     #
     # posLeft, posCenter, posRight
-    # початкове розташування було GCV, тобто 2, 8, 9
-    posLeft = 2
-    posCenter = 8
-    posRight = 9
+    # початкове розташування було GCV, тобто FLOWER_GERANIUM, FLOWER_CROCUS, FLOWER_VIOLET
+    posLeft = FLOWER_GERANIUM
+    posCenter = FLOWER_CROCUS
+    posRight = FLOWER_VIOLET
     for i in range(k):
         # перестановка правої і центральної квіточок
         posCenter, posRight = posRight, posCenter
@@ -22,23 +26,23 @@ for j in range(t):
         # перестановка лівої і центральної квіточок
         posCenter, posLeft = posLeft, posCenter
     #print(posLeft, posCenter, posRight)
-    if posLeft == 2:
+    if posLeft == FLOWER_GERANIUM:
         print('G', end='')
-    elif posLeft == 8:
+    elif posLeft == FLOWER_CROCUS:
         print('C', end='')
     else:
         print('V', end='')
 
-    if posCenter == 2:
+    if posCenter == FLOWER_GERANIUM:
         print('G', end='')
-    elif posCenter == 8:
+    elif posCenter == FLOWER_CROCUS:
         print('C', end='')
     else:
         print('V', end='')
 
-    if posRight == 2:
+    if posRight == FLOWER_GERANIUM:
         print('G')
-    elif posRight == 8:
+    elif posRight == FLOWER_CROCUS:
         print('C')
     else:
         print('V')
