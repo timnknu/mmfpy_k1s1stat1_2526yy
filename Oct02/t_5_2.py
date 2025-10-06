@@ -1,13 +1,10 @@
 lst = [1, 12, -8, 127, 15, 24, -1]
 
-i = 0
-for e in lst:
-    print("Черговий елемент списку", e, f"а цей же елемент, отриманий за індексом {i} рівний", lst[i])
-    if lst[i] >= 0: # або можна було if e >= 0:
-        lst[i] = lst[i] + 2 # або можна було lst[i] = e + 2
-        # АЛЕ ТАК РОБИТИ НЕ ТРЕБА!!!
-    else:
-        pass # нічого не робити (можна було блок else просто не писати)
-    i = i + 1
+num_elements = len(lst)
+print("Загалом у нас є", num_elements)
+for i in range(num_elements):
+    print(f"же елемент, отриманий за індексом {i} рівний", lst[i])
+    if lst[i] >= 0:
+        lst[i] = lst[i] + 2
 print(lst)
 
