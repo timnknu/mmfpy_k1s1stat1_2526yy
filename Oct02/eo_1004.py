@@ -1,5 +1,5 @@
 n = 197564
-base = 10
+base = 2
 digits = []
 while n > 0:
     d = n % base
@@ -8,10 +8,23 @@ while n > 0:
     n = n // base # або n //= base
 print(digits)
 
-L1 = [digits[-1]]
-print("Список із лише останнього елемента", L1)
-L2 = digits[:-1]
-print("Зріз до останнього елемента НЕВКЛЮЧНО", L2)
-digits = L1 + L2
+rotated_nums = []
+for i in range(len(digits)):
+    L1 = [digits[-1]]
+    #print("Список із лише останнього елемента", L1)
+    L2 = digits[:-1]
+    #print("Зріз до останнього елемента НЕВКЛЮЧНО", L2)
+    digits = L1 + L2
 
-print(digits)
+    s = 0
+    for j, elem in enumerate(digits):
+        t = elem * base**(len(digits) - 1 - j)
+        s = s + t
+
+    print(digits, s)
+    rotated_nums.append(s)
+print(max(rotated_nums))
+
+
+
+
