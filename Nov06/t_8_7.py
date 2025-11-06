@@ -1,5 +1,5 @@
 
-N = 4
+N = 7
 counters = [0] * N
 
 def cubes_print(j):
@@ -9,7 +9,12 @@ def cubes_print(j):
             cubes_print(j+1)
         else:
             if sum(counters) == N:
-                print(counters)
+                for element in counters:
+                    if element != 0:
+                        print(element, end= ' ')
+                    else:
+                        break
+                print()
 
 for counters[0] in range(1, N+1):
     cubes_print(1)
