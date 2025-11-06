@@ -1,18 +1,16 @@
-counters = [0, 0, 0, 0]
 
-M = 3
-total_printed = 0
+N = 4
+counters = [0] * N
 
 def cubes_print(j):
-    global total_printed
-    for counters[j] in range(1, counters[j-1]+1):
+    for counters[j] in range(0, counters[j-1]+1):
+    #for counters[j] in range(counters[j - 1] + 1):
         if j+1 < len(counters):
             cubes_print(j+1)
         else:
-            print(counters, sum(counters))
-            total_printed += 1
+            if sum(counters) == N:
+                print(counters)
 
-for counters[0] in range(1, M+1):
+for counters[0] in range(1, N+1):
     cubes_print(1)
 
-print(total_printed)
