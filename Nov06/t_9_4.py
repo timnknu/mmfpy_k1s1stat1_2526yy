@@ -21,6 +21,5 @@ for x,y in positions.items():
         print(f"{str(x):10s} {max(y)} <- {y}")
         filtered_positions[x] = max(y)
 print(filtered_positions.items())
-def my_sorting_criteria(t):
-    return t[1]
-print(sorted(filtered_positions.items(), key=my_sorting_criteria))
+
+print(sorted(filtered_positions.items(), key=lambda t: t[1]))
