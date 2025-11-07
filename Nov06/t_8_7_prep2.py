@@ -1,6 +1,6 @@
 counters = [0, 0, 0, 0]
 
-M = 2
+M = 10
 total_printed = 0
 
 def cubes_print(j):
