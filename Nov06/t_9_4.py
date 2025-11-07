@@ -24,7 +24,7 @@ print(filtered_positions.items())
 
 ordered_pairs = sorted(filtered_positions.items(), key=lambda t: t[1])
 print(ordered_pairs)
-what_I_want_to_print = []
-for tpl in ordered_pairs:
-    what_I_want_to_print.append(tpl[0])
-print(*what_I_want_to_print)
+# what_I_want_to_print = [tpl[0] for tpl in ordered_pairs]
+# print(*what_I_want_to_print)
+
+print(*[tpl[0] for tpl in ordered_pairs])
