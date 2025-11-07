@@ -22,4 +22,10 @@ for x,y in positions.items():
         filtered_positions[x] = max(y)
 print(filtered_positions.items())
 
-print(sorted(filtered_positions.items(), key=lambda t: t[1]))
+ordered_pairs = sorted(filtered_positions.items(), key=lambda t: t[1])
+print(ordered_pairs)
+for i, tpl in enumerate(ordered_pairs):
+    if i==len(ordered_pairs)-1:
+        print(tpl[0])
+    else:
+        print(tpl[0], end= ' ')
