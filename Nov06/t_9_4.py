@@ -24,8 +24,7 @@ print(filtered_positions.items())
 
 ordered_pairs = sorted(filtered_positions.items(), key=lambda t: t[1])
 print(ordered_pairs)
+what_I_want_to_print = []
 for i, tpl in enumerate(ordered_pairs):
-    if i==len(ordered_pairs)-1:
-        print(tpl[0])
-    else:
-        print(tpl[0], end= ' ')
+    what_I_want_to_print.append(tpl[0])
+print(*what_I_want_to_print)
