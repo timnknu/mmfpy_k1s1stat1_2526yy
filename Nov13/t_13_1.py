@@ -4,8 +4,8 @@ infile = open('inp_13_1.txt', 'rt')
 # print(s)
 
 for line in infile:
-    #print(line[:-1])
-    if line.find(") ") == -1:
-        print(line.rstrip())
+    line = line.rstrip()
+    if len(line) > 20:
+        print(line)
 
 infile.close()
