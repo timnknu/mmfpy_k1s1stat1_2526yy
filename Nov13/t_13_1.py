@@ -1,6 +1,5 @@
 infile = open('inp_13_1.txt', 'rt')
 
-
 the_longest_line = infile.readline()
 max_line_length = len(the_longest_line)
 
