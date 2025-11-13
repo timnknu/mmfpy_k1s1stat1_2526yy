@@ -1,15 +1,15 @@
 infile = open('inp_13_1.txt', 'rt')
 
-# s = infile.readlines()
-# print(s)
-nEmptyLines = 0
+max_line_length = -10
+the_longest_line = ''
 
 for line in infile:
     line = line.rstrip()
     #print(len(line), line)
-    if len(line)==0:
-        nEmptyLines += 1
+    if len(line) > max_line_length:
+        max_line_length = len(line)
+        the_longest_line = line
 
 infile.close()
 
-print(nEmptyLines)
+print(the_longest_line)
