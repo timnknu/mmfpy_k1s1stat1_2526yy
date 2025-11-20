@@ -28,16 +28,21 @@ B_n_cols = A_n_rows
 # B[0...B_n_rows-1][0..B_n_cols-1]
 # тепер в B[i][j] елемент матриці B треба записати A[j][i] елемент матриці A
 
+# обробка (транспонування матриці)
 B = []
 for i in range(B_n_rows):
+    # row = [0]*B_n_cols
     row = []
     for j in range(B_n_cols):
         row.append(0)
     B.append(row)
 
+for i in range(B_n_rows):
+    for j in range(B_n_cols):
+        B[i][j] = A[j][i]
+
 print(B)
 
 
-# обробка (транспонування матриці)
 
 # запис вже транспонованої матриці у новий текстовий файл
