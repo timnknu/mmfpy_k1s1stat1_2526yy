@@ -12,7 +12,7 @@ A = read_matrix_from_file('inp1.txt')
 print('Here is our original matrix')
 for row in A:
     print('here is the row of A:', row)
-print(A[2][1])
+#print(A[2][1])
 # r = A[0.....len(A)-1] == A[0...A_n_rows-1]
 # r[0...len(r)-1s] == r[0...A_n_cols-1]
 # =>
@@ -31,18 +31,19 @@ B_n_cols = A_n_rows
 # обробка (транспонування матриці)
 B = []
 for i in range(B_n_rows):
-    # row = [0]*B_n_cols
     row = []
     for j in range(B_n_cols):
-        row.append(0)
+        row.append(A[j][i])
     B.append(row)
 
-for i in range(B_n_rows):
-    for j in range(B_n_cols):
-        B[i][j] = A[j][i]
 
-print(B)
-
-
+print('Here is our transposed matrix')
+for row in B:
+    print('here is the row of B:', row)
 
 # запис вже транспонованої матриці у новий текстовий файл
+f = open('out.txt', 'w')
+# або -- with open('out.txt', 'w') as f: ....
+for row in B:
+    print(*row, file=f)
+f.close()
