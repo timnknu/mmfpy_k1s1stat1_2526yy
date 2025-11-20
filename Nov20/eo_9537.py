@@ -28,22 +28,26 @@ B_n_cols = A_n_rows
 # B[0...B_n_rows-1][0..B_n_cols-1]
 # тепер в B[i][j] елемент матриці B треба записати A[j][i] елемент матриці A
 
-# обробка (транспонування матриці)
-B = []
-for i in range(B_n_rows):
-    row = []
-    for j in range(B_n_cols):
-        row.append(A[j][i])
-    B.append(row)
+try:
+    # обробка (транспонування матриці)
+    B = []
+    for i in range(B_n_rows):
+        row = []
+        for j in range(B_n_cols):
+            row.append(A[j][i])
+        B.append(row)
 
+    print('Here is our transposed matrix')
+    for row in B:
+        print('here is the row of B:', row)
 
-print('Here is our transposed matrix')
-for row in B:
-    print('here is the row of B:', row)
+    # запис вже транспонованої матриці у новий текстовий файл
+    f = open('out.txt', 'w')
+    # або -- with open('out.txt', 'w') as f: ....
+    for row in B:
+        print(*row, file=f)
+    f.close()
+except:
+    print("При транспонуванні матриці сталася помилка, але яка - самі не знаємо... Але програма далі працювати не буде")
 
-# запис вже транспонованої матриці у новий текстовий файл
-f = open('out.txt', 'w')
-# або -- with open('out.txt', 'w') as f: ....
-for row in B:
-    print(*row, file=f)
-f.close()
+print("Всім гарного дня!")
