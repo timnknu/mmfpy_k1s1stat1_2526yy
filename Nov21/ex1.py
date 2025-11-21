@@ -49,9 +49,10 @@ try:
     for row in B:
         print('here is the row of B:', row)
 
-
 except FileNotFoundError:
     print("файл відсутній")
     if is_debigging:
         print(traceback.format_exc())
     print("та й таке...")
+except ValueError: # !: кілька блоків except стосуються одного і того ж блоку try
+    print("Сталася помилка ValueError")
