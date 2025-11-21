@@ -14,15 +14,11 @@ def read_matrix(file_name):
             n_elems = len(vals)
             all_uniq_lengths.add(n_elems)
             #all_uniq_lengths = all_uniq_lengths | {n_elems}
-    if len(all_uniq_lengths)==1:
-        print("з матрицею все гаразд")
-    else:
-        print("різні рядки матриці мають різну кількість елементів")
-        raise ValueError("некоректна структура матриці")
+    assert len(all_uniq_lengths)==1, "поорушилося припущення про те, що в усіх рядках однакова кількість елементів"
     return M
 #
 
-file_name = '--inp1.txt'
+file_name = 'inp1.txt'
 try:
     try:
         A = read_matrix(file_name)
@@ -57,6 +53,9 @@ try:
         print("1/0" , 1/0)
     except ValueError: # !: кілька блоків except стосуються одного і того ж блоку try
         print("Сталася помилка ValueError")
+    except AssertionError as e:
+        print("не виконалося припущення, на яке покладалася наша програма!")
+        print("e=",e)
     finally:
         print("Ця частина виконається незалежно від того, була помилка, чи ні")
 except:
