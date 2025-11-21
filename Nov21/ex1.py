@@ -22,37 +22,43 @@ def read_matrix(file_name):
     return M
 #
 
-file_name = 'inp1.txt'
-
+file_name = '--inp1.txt'
 try:
-    A = read_matrix(file_name)
-    print(A)
+    try:
+        A = read_matrix(file_name)
+        print(A)
 
-    A_n_rows = len(A)
-    A_n_cols = len(A[0])
-    print(f"матриця має {A_n_rows} рядк(и/ів) та {A_n_cols} стопвці(в)")
+        A_n_rows = len(A)
+        A_n_cols = len(A[0])
+        print(f"матриця має {A_n_rows} рядк(и/ів) та {A_n_cols} стопвці(в)")
 
-    B_n_rows = A_n_cols
-    B_n_cols = A_n_rows
-    # B[0...B_n_rows-1][0..B_n_cols-1]
-    # тепер в B[i][j] елемент матриці B треба записати A[j][i] елемент матриці A
+        B_n_rows = A_n_cols
+        B_n_cols = A_n_rows
+        # B[0...B_n_rows-1][0..B_n_cols-1]
+        # тепер в B[i][j] елемент матриці B треба записати A[j][i] елемент матриці A
 
-    # обробка (транспонування матриці)
-    B = []
-    for i in range(B_n_rows):
-        row = []
-        for j in range(B_n_cols):
-            row.append(A[j][i])
-        B.append(row)
+        # обробка (транспонування матриці)
+        B = []
+        for i in range(B_n_rows):
+            row = []
+            for j in range(B_n_cols):
+                row.append(A[j][i])
+            B.append(row)
 
-    print('Here is our transposed matrix')
-    for row in B:
-        print('here is the row of B:', row)
+        print('Here is our transposed matrix')
+        for row in B:
+            print('here is the row of B:', row)
 
-except FileNotFoundError:
-    print("файл відсутній")
-    if is_debigging:
-        print(traceback.format_exc())
-    print("та й таке...")
-except ValueError: # !: кілька блоків except стосуються одного і того ж блоку try
-    print("Сталася помилка ValueError")
+    except FileNotFoundError:
+        print("файл відсутній")
+        if is_debigging:
+            print(traceback.format_exc())
+        print("та й таке...")
+        print("1/0" , 1/0)
+    except ValueError: # !: кілька блоків except стосуються одного і того ж блоку try
+        print("Сталася помилка ValueError")
+    finally:
+        print("Ця частина виконається незалежно від того, була помилка, чи ні")
+except:
+    print("сталася помилка під час обробки помилки...")
+    print(traceback.format_exc())
