@@ -47,6 +47,6 @@ def get_min_element_index(a, iFrom):
 
 for iFrom in range(0, len(L)-1):
     j = get_min_element_index(L, iFrom)
+    L[j], L[iFrom] = L[iFrom], L[j]
     print(f'{iFrom=}, {j=}, {L[j]=}, {L=}')
-    L = L[0:iFrom] + [ L[j] ] + L[iFrom:j] + L[j+1:]
 
