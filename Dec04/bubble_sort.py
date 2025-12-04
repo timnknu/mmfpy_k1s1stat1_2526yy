@@ -40,10 +40,16 @@ print(L)
 print()
 n = len(L)
 while n>1:
+    print('              ми зараз аналізуватимемо', L[0:n] )
+    is_sorted = True
     for i in range(0, n - 1):
         if L[i] > L[i+1]:
             L[i], L[i + 1] = L[i + 1], L[i]
-    print(L)
+            is_sorted = False
+    print('після аналізу і перестановок ми маємо:', L)
+    if is_sorted:
+        print('Ура, ми все впорядкували: щойно надрукований список вже впорядкований!!!!')
+        break
     #
     n -= 1
 
