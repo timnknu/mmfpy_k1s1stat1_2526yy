@@ -7,7 +7,7 @@ class Triangle:
         self._position = (0, 0)
         self._vertex1 = (x1, y1)
         self._vertex2 = (x2, y2)
-        #self._color = "black"
+        self._color = "black"
 
     def set_position(self, x, y):
         self._position = (x, y)
@@ -22,13 +22,18 @@ class Triangle:
         turtle.penup()
         turtle.goto(x0, y0)
         turtle.pendown()
+        turtle.color(self._color)
+        turtle.fillcolor('yellow')
 
+        turtle.begin_fill()
         turtle.goto(x0+x1, y0+y1)
         turtle.goto(x0+x2, y0+y2)
         turtle.goto(x0, y0)
+        turtle.end_fill()
 
 tr = Triangle(120, 50, 30, 180)
 tr.set_position(50, 60)
+tr.set_color('lime green')
 tr.draw()
 
 another_tr = Triangle(-120, -150, -30, -80)
