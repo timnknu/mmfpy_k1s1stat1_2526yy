@@ -58,10 +58,12 @@ class BiQuadraticEquation(QuadraticEquation):
     def __init__(self, coef_a, coef_b, coef_c):
         super().__init__(coef_a, coef_b, coef_c)
     def solve(self):
-        if self.number_of_root() == 0:
+        qe_roots = super().solve()
+        if isinstance(qe_roots, AllRealNumbers):
+            return ALL_REAL_NUMBERS
+        elif len(qe_roots)==0:
             return tuple()
         else:
-            qe_roots = super().solve()
             x_roots = []
             for t in qe_roots:
                 if t >= 0:
