@@ -80,4 +80,20 @@ e = QuadraticEquation(1, -3, 2)
 e.print_roots()
 
 e = BiQuadraticEquation(1, -3, 2)
-print(e.solve())
+e.print_roots()
+
+
+eqs = []
+
+with open('input01.txt') as f:
+    for line in f:
+        data = line.strip().split()
+        coefs = map(int, data)
+        if len(coefs) == 2:
+            e = LinearEquation(**coefs)
+        elif len(coefs) == 3:
+            e = QuadraticEquation(**coefs)
+        else:
+            e = QuadraticEquation(coefs[0], coefs[2], coefs[4])
+        eqs.append(e)
+
