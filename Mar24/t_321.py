@@ -1,7 +1,10 @@
+import math
+
 class AllRealNumbers:
     def __str__(self):
-        return 'GOOD!!!'
+        return 'infinite number of solutions - all real numbers'
 
+# "константа", яка відповідає "всі дійсні числа"
 ALL_REAL_NUMBERS = AllRealNumbers()
 
 class LinearEquation:
@@ -19,10 +22,16 @@ class LinearEquation:
                 return tuple()
             else:
                 return ALL_REAL_NUMBERS
+    #
+    def print_roots(self):
+        print(self.solve())
+    #
+    def number_of_root(self): # повертає кількість розв'язків
+        s = self.solve()
+        if isinstance(s, tuple):
+            return len(s)
+        else:
+            return math.inf # використали "вбудовану" константу для +infinity
 
-x1 = ALL_REAL_NUMBERS
-x2 = (1, 2)
 
-print(x1)
-print(x2)
-
+class
