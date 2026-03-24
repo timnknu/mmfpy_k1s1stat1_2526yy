@@ -34,4 +34,24 @@ class LinearEquation:
             return math.inf # використали "вбудовану" константу для +infinity
 
 
-class
+class QuadraticEquation(LinearEquation):
+    def __init__(self, coef_a, coef_b, coef_c):
+        self.a = coef_a
+        super().__init__(coef_b, coef_c)
+    def solve(self):
+        if self.a == 0:
+            return super().solve()
+        else:
+            D = self.b**2 - 4 * self.a * self.c
+            if D < 0:
+                return tuple()
+            elif abs(D) < 1e-12: # або можна було D==0, якщо ми впевнені, що D - ціле число
+                x0 = -self.b / (2*self.a)
+                return (x0, )
+            else:
+                x1 = (-self.b + D**0.5) / (2*self.a)
+                x2 = (-self.b - D**0.5) / (2 * self.a)
+                return (x1, x2)
+
+e = QuadraticEquation(1, -3, 2)
+print(e.solve())
