@@ -52,6 +52,30 @@ class QuadraticEquation(LinearEquation):
                 x1 = (-self.b + D**0.5) / (2*self.a)
                 x2 = (-self.b - D**0.5) / (2 * self.a)
                 return (x1, x2)
+#
+
+class BiQuadraticEquation(QuadraticEquation):
+    def __init__(self, coef_a, coef_b, coef_c):
+        super().__init__(coef_a, coef_b, coef_c)
+    def solve(self):
+        if self.number_of_root() == 0:
+            return tuple()
+        else:
+            qe_roots = super().solve()
+            x_roots = []
+            for t in qe_roots:
+                if t >= 0:
+                    x_roots.append(t**0.5)
+            return tuple(x_roots)
+    #
+
+
+e = LinearEquation(1, -2)
+e.print_roots()
+
 
 e = QuadraticEquation(1, -3, 2)
+e.print_roots()
+
+e = BiQuadraticEquation(1, -3, 2)
 print(e.solve())
