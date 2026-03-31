@@ -5,17 +5,21 @@ class Figure:
         self._x0 = x0
         self._y0 = y0
         self._color = 'red'
+        self._is_visible = False
     def set_color(self, color):
         self._color = color
     def _draw(self):
         raise NotImplementedError("Зробіть спершу дочірній клас")
     def show(self):
-        turtle.color(self._color)
-        self._draw()
+        if not self._is_visible:
+            turtle.color(self._color)
+            self._draw()
+        self._is_visible = True
     def hide(self):
-        turtle.color('white')
-        self._draw()
-
+        if self._is_visible:
+            turtle.color('white')
+            self._draw()
+        self._is_visible = False
 
 class Circle(Figure):
     def __init__(self, x0, y0, radius):
@@ -51,6 +55,7 @@ turtle.speed(1)
 
 s = Square(100, 100, 80)
 s.set_color('red')
+s.show()
 s.show()
 s.hide()
 
