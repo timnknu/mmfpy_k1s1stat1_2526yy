@@ -16,9 +16,6 @@ class Figure:
         turtle.color('white')
         self._draw()
 
-f = Figure(10, 10)
-f.show()
-
 
 class Circle(Figure):
     def __init__(self, x0, y0, radius):
@@ -53,8 +50,10 @@ class Square(Figure):
 turtle.speed(1)
 
 s = Square(100, 100, 80)
-s._draw()
+s.set_color('red')
+s.show()
 s.hide()
+
 
 # c = Circle(100, 100, 50)
 # c.draw()
