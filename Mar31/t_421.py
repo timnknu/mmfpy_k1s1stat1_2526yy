@@ -59,21 +59,28 @@ class Square(Rectangle):
         #super().set_dimens(a, b)
 
 
+class Car(Figure):
+    def __init__(self, x0, y0):
+        super().__init__(x0, y0)
+        self._body = Rectangle( x0, y0, 200, 100)
+        self._front_wheel = Circle(x0 + 200 - 50, y0 - 25, 50)
+        self._back_wheel = Circle( x0 + 50 , y0 - 25, 50)
+    def show(self):
+        self._body.show()
+        self._front_wheel.show()
+        self._back_wheel.show()
+    def hide(self):
+        self._body.hide()
+        self._front_wheel.hide()
+        self._back_wheel.hide()
+
+
 #
-turtle.speed(1)
+turtle.speed(3)
 
-#s = Rectangle(100, 100, 80, 120)
-s = Square(100, 100, 80)
-s.set_color('red')
-#s.set_dimens(100, 200)
-s.show()
-s.show()
-s.hide()
-
-
-# c = Circle(100, 100, 50)
-# c.draw()
-# c.hide()
+c = Car(-200, 100)
+c.show()
+c.hide()
 
 turtle.mainloop()
 # turtle.exitonclick()
