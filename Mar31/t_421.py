@@ -38,8 +38,9 @@ class Rectangle(Figure):
         self._a = sideX
         self._b = sideY
         super().__init__(x0, y0)
-    def set_side(self, a):
+    def set_dimens(self, a, b):
         self._a = a
+        self._b = b
     def _draw(self):
         turtle.penup()
         turtle.goto(self._x0, self._y0)
@@ -49,13 +50,22 @@ class Rectangle(Figure):
         turtle.goto(self._x0 + self._a, self._y0)
         turtle.goto(self._x0, self._y0)
 
+class Square(Rectangle):
+    def __init__(self, x0, y0, a):
+        super().__init__(x0, y0, a, a)
+    def set_dimens(self, a, b):
+        raise NotImplementedError
+        #assert a==b
+        #super().set_dimens(a, b)
 
 
 #
 turtle.speed(1)
 
-s = Rectangle(100, 100, 80, 120)
+#s = Rectangle(100, 100, 80, 120)
+s = Square(100, 100, 80)
 s.set_color('red')
+#s.set_dimens(100, 200)
 s.show()
 s.show()
 s.hide()
