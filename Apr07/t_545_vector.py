@@ -17,6 +17,8 @@ class Vector:
         for i in range(len(self._elems)):
             c = self._elems[i] + other._elems[i]
             new_elems.append(c)
+        # for a,b in zip(self._elems, other._elems):
+        #     new_elems.append(a+b)
         new_vec = Vector(new_elems)
         return new_vec
 
