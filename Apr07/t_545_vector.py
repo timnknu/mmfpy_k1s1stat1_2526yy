@@ -21,13 +21,23 @@ class Vector:
         #     new_elems.append(a+b)
         new_vec = Vector(new_elems)
         return new_vec
+    def __getitem__(self, item):
+        return self._elems[item]
+    def __setitem__(self, key, value):
+        self._elems[key] = value
+
 
 
 a = Vector([1,2,3])
-b = Vector([100, 500, 800])
+
+print(a[0])
+a[0] = 125
 print(a)
-print(b)
-print(a + b)
+#
+# b = Vector([100, 500, 800])
+# print(a)
+# print(b)
+# print(a + b)
 
 
 
