@@ -18,6 +18,9 @@ class Vector:
             for i in range(len(self._elems)):
                 c = self[i] + other
                 new_elems.append(c)
+            # for e in self:
+            #     c = e + other
+            #     new_elems.append(c)
             new_vec = Vector(new_elems)
             return new_vec
         elif isinstance(other, Vector):
@@ -30,6 +33,8 @@ class Vector:
                 c = self[i] + other[i]
                 new_elems.append(c)
             # for a,b in zip(self._elems, other._elems):
+            #     new_elems.append(a+b)
+            # for a,b in zip(self, other):
             #     new_elems.append(a+b)
             new_vec = Vector(new_elems)
             return new_vec
