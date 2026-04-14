@@ -39,6 +39,9 @@ class Vector:
         return self._elems[item]
     def __setitem__(self, key, value):
         self._elems[key] = value
+    def __len__(self):
+        return len(self._elems)
+
 
 
 
@@ -48,3 +51,4 @@ print(a + b)
 print(a + 12)
 print(12 + a)
 #print(a + 'рядок')
+print(len(a))
