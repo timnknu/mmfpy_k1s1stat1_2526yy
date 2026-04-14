@@ -1,4 +1,4 @@
-class MyIterator:
+class MySource:
     def __init__(self):
         self._idx = 0
         self._letters = 'abcdef'
@@ -8,11 +8,8 @@ class MyIterator:
         c = self._letters[self._idx]
         self._idx += 1
         return c
-
-class MySource:
     def __iter__(self):
-        finger = MyIterator()
-        return finger
+        return self
 
 
 obj = MySource()
