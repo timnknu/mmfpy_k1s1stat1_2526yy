@@ -2,11 +2,14 @@ import copy
 
 class Vector:
     def __init__(self, lst):
-        self._elems = copy.copy(lst)
+        self._elems = copy.deepcopy(lst)
     def __str__(self):
         #estr = [str(e) for e in self._elems]
-        estr = map(str, self._elems)
-        s = ', '.join(estr)
+        #estr = map(str, self._elems)
+        #s = ', '.join(estr)
+        s = ''
+        for e in self._elems:
+            s = s + str(e) + "; "
         return f"Vec ({s})"
     def __add__(self, other):
         if isinstance(other, (float, int)):
@@ -19,11 +22,11 @@ class Vector:
             return new_vec
         elif isinstance(other, Vector):
             # assert len(self._elems) == len(other._elems):
-            if len(self._elems) != len(other._elems):
+            if len(self) != len(other):
                 raise ValueError("Вектори мають мати однакову кількість елементів")
             #
             new_elems = []
-            for i in range(len(self._elems)):
+            for i in range(len(self)):
                 c = self[i] + other[i]
                 new_elems.append(c)
             # for a,b in zip(self._elems, other._elems):
@@ -43,12 +46,14 @@ class Vector:
         return len(self._elems)
 
 
+row1 = Vector([1,2,3])
+row2 = Vector([50,60,70])
+a = Vector([row1, row2])
 
+print(a)
 
-a = Vector([1,2,3])
-b = Vector([1000,500,800])
+row3 = Vector([10,20,30])
+row4 = Vector([5,6,7])
+b = Vector([row3, row4])
+
 print(a + b)
-print(a + 12)
-print(12 + a)
-#print(a + 'рядок')
-print(len(a))
