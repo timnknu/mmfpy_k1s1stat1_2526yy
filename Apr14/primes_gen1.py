@@ -1,10 +1,14 @@
 
-primes = []
+known_primes = []
 
-candidate = 17
-is_prime = True
-for d in range(2, int(candidate**0.5 + 1)) :
-    if candidate % d == 0:
-        is_prime = False
-        break
-print(is_prime)
+for candidate in range(2, 100):
+    is_prime = True
+    for d in known_primes :
+        if candidate % d == 0:
+            is_prime = False
+            break
+        if d > candidate**0.5:
+            break
+    if is_prime:
+        print(candidate)
+        known_primes.append(candidate)
