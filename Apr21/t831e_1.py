@@ -1,13 +1,17 @@
 import math
 
 N = 1000
-
-x = 30
+eps = 1e-5 # 10**(-5) = 0.00001
+x = 10
 an = x
 y = an
-for n in range(1, N+1):
+n = 1
+while True:
     an = an * (-x**2/(2*n+1)/2/n)
-    #print(n, an)
     y = y + an
+    print(n, ':', an, y)
+    if abs(an) < eps:
+        break
+    n += 1
 print(y)
 print(math.sin(x))
