@@ -4,3 +4,11 @@ https://docs.python.org/3/library/tkinter.html#tkinter-variables
 
 https://web.archive.org/web/20240302173000/https://visualtk.com/
 
+
+"конструктори" графічних інтерфейсів для tkinter:
+ https://www.geeksforgeeks.org/python/python-tkinter-tutorial/
+ https://sourceforge.net/projects/page/
+
+
+ https://www.tutorialspoint.com/python/python_gui_programming.htm
+

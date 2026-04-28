@@ -19,6 +19,7 @@ status = ttk.Label(root)
 status.pack(fill="x", padx=10, pady=(0, 10))
 
 def read_value():
+    print('The value is', value_var.get())
     status.config(text=f"entry.get() = {entry.get()!r}; StringVar.get() = {value_var.get()!r}")
 
 def set_with_variable():

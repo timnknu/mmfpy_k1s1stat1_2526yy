@@ -22,6 +22,7 @@ points = []
 for x in range(WIDTH):
     y = mid_y - math.sin((x - mid_x) / 40) * 80
     points.extend((x, y))
+print(points)
 
 canvas.create_line(points, fill="blue", width=2, smooth=1)
 canvas.create_text(70, 20, text="y = sin(x)", fill="blue", font=("Arial", 12, "bold"))
