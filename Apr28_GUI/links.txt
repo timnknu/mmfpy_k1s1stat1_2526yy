@@ -1,0 +1,6 @@
+https://tkdocs.com/tutorial/index.html
+
+https://docs.python.org/3/library/tkinter.html#tkinter-variables
+
+https://web.archive.org/web/20240302173000/https://visualtk.com/
+
