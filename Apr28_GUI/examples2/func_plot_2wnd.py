@@ -1,3 +1,6 @@
+# "Удосконалений" приклад побудови графіка функції з використанням двох вікон:
+# одного для введення функції, іншого для її відображення.
+
 from tkinter import *
 from tkinter import messagebox
 import math
@@ -40,6 +43,8 @@ def draw_function():
     try:
         for px in range(WIDTH):
             x = (px - mid_x) / 40
+            # тут ми використовуємо `eval` для обчислення значення функції, введеної користувачем
+            # (це не найбезпечніший спосіб, але він найпростіший для демонстрації)
             y_value = eval(expr, {"__builtins__": {}}, {**safe_names, "x": x})
             y = mid_y - y_value * 80
             points.extend((px, y))
