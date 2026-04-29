@@ -1,3 +1,5 @@
+# Приклад: метод .after() для створення "відкладених" та "періодичних" викликів функцій
+
 import time
 import tkinter as tk
 from tkinter import ttk

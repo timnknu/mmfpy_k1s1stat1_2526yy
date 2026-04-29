@@ -1,3 +1,5 @@
+# Приклад: діалог вибору кольору
+
 import tkinter as tk
 from tkinter import colorchooser, ttk
 
@@ -18,7 +20,7 @@ def pick_color():
     rgb, value = colorchooser.askcolor(parent=root)
     if value:
         preview.config(bg=value)
-    status.config(text=f"askcolor -> rgb={rgb!r}, hex={value!r}")
+    status.config(text=f"askcolor -> rgb={rgb}, hex={value}")
 
 ttk.Button(root, text="Choose color", command=pick_color).pack(anchor="w", padx=10)
 

@@ -1,3 +1,7 @@
+# Приклад: обробка подій, відмінних від натискання кнопки (віджет Button)
+# Показано обробку руху миші, кліків, прокрутки колеса та натискань клавіш.
+# Для обробки клавіатурних подій, потрібно спершу клацнути в білій області (event_box) перед натисканням клавіш.
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -26,7 +30,7 @@ def on_click(event):
     status_var.set(f"button {event.num}: x={event.x}, y={event.y}")
 
 def on_key(event):
-    status_var.set(f"key: keysym={event.keysym!r}, char={event.char!r}")
+    status_var.set(f"key: keysym={event.keysym}, char={event.char}")
 
 def on_wheel_up(event):
     status_var.set("wheel up")
@@ -34,6 +38,7 @@ def on_wheel_up(event):
 def on_wheel_down(event):
     status_var.set("wheel down")
 
+# примітка: залежно від операційної системи, прокрутка колеса може генерувати різні події.
 event_box.bind("<Motion>", on_motion)
 event_box.bind("<Button-1>", on_click)
 event_box.bind("<Button-4>", on_wheel_up)

@@ -1,3 +1,4 @@
+# Приклад: віджет Text: багаторядковий Text і використання StringVar для "дзеркалювання"
 import tkinter as tk
 from tkinter import ttk
 
@@ -21,7 +22,7 @@ status.pack(fill="x", padx=10, pady=(0, 10))
 
 def sync_from_text(event=None):
     mirror_var.set(text.get("1.0", "end-1c"))
-    status.config(text=f"StringVar.get() = {mirror_var.get()!r}")
+    status.config(text=f"StringVar.get() = {mirror_var.get()}")
 
 def load_from_variable():
     text.delete("1.0", tk.END)

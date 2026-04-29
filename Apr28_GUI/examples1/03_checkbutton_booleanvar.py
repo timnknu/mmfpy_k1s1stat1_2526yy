@@ -1,3 +1,5 @@
+# Приклад: віджет Checkbutton: 'checkbox'-"прапорець", і використання BooleanVar
+
 import tkinter as tk
 from tkinter import ttk
 

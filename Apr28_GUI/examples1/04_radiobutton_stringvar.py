@@ -1,3 +1,5 @@
+# Приклад: віджет Radiobutton: 'radiobutton'-"перемикачі", і використання StringVar
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -18,7 +20,7 @@ status = ttk.Label(root)
 status.pack(fill="x", padx=10, pady=10)
 
 def read_value():
-    status.config(text=f"StringVar.get() = {choice_var.get()!r}")
+    status.config(text=f"StringVar.get() = {choice_var.get()}")
 
 def set_blue():
     choice_var.set("blue")

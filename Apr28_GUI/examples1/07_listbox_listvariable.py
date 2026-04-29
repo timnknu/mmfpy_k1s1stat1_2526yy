@@ -1,3 +1,5 @@
+# Приклад: віджет Listbox та його параметр listvariable
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -22,7 +24,7 @@ def read_selection():
     selection = listbox.curselection()
     if selection:
         index = selection[0]
-        status.config(text=f"selected = {listbox.get(index)!r}")
+        status.config(text=f"selected = {listbox.get(index)}")
     else:
         status.config(text="selected = none")
 

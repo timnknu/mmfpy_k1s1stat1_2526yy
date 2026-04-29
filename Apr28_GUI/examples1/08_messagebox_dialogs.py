@@ -1,6 +1,7 @@
+# Приклад: вбудовані вікна повідомлень
+
 import tkinter as tk
 from tkinter import messagebox, ttk
-
 
 # Docs:
 # https://docs.python.org/3/library/tkinter.messagebox.html
@@ -12,7 +13,9 @@ status = ttk.Label(root, text="Last result")
 status.pack(fill="x", padx=10, pady=10)
 
 def show(name, callback):
-    status.config(text=f"{name} -> {callback()!r}")
+    s = f"{name} -> {callback()}"
+    status.config(text=s)
+    print(s)
 
 actions = [
     ("showinfo", lambda: messagebox.showinfo("Info", "hello", parent=root)),

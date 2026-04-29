@@ -1,3 +1,5 @@
+# Приклад: віджет Spinbox і використання IntVar
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -19,7 +21,7 @@ status = ttk.Label(root)
 status.pack(fill="x", padx=10, pady=(0, 10))
 
 def read_value():
-    status.config(text=f"spinbox.get() = {spinbox.get()!r}; IntVar.get() = {count_var.get()}")
+    status.config(text=f"spinbox.get() = {spinbox.get()}; IntVar.get() = {count_var.get()}")
 
 def set_value():
     count_var.set(7)

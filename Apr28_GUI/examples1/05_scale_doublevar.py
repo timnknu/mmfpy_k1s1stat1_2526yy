@@ -1,3 +1,5 @@
+# Приклад: віджет Scale - "повзунок", і використання DoubleVar
+
 import tkinter as tk
 from tkinter import ttk
 
