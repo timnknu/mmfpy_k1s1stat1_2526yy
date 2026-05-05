@@ -4,17 +4,34 @@ rates = {
     'UAH': {'UAH': 1, 'EUR': 0.025, 'USD': 0.027}
 }
 
-
 # cFrom = 'UAH'
 # cTo = 'USD'
 # k = rates[cFrom][cTo]
 # print(k)
 
+class InvalidFormatError(Exception):
+    pass
+class UnknownCurrencyError(Exception):
+    pass
+class NegativeAmountError(Exception):
+    pass
+
 
 def convert_currencies(s):
     d = s.split()
-    v = float(d[0])
+    if len(d) != 2:
+        raise InvalidFormatError
+    try:
+        v = float(d[0])
+    except:
+        raise InvalidFormatError
+    if v < 0:
+        raise NegativeAmountError
+
     cFrom = d[1]
+    if cFrom not in rates.keys():
+        raise UnknownCurrencyError
+
     k = rates[cFrom]['UAH']
     res = v * k
     return res
