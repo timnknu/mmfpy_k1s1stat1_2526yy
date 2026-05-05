@@ -1,5 +1,7 @@
 import tkinter
+from tkinter import messagebox
 import curr_conv_logic
+from tkinter import ttk
 
 root = tkinter.Tk()
 
@@ -10,20 +12,28 @@ def btn_onlick():
     s = usrval.get()
     try:
         res = curr_conv_logic.convert_currencies(s)
+        usrval.set(str(res))
     except curr_conv_logic.InvalidFormatError:
-        res = "Невірний формат"
+        messagebox.showerror("Помилка",
+                             "Невірний формат",
+                             parent=root)
     except curr_conv_logic.UnknownCurrencyError:
-        res = "Невідома валюта"
+        messagebox.showerror("Помилка",
+                             "Невідома валюта",
+                             parent=root)
     except curr_conv_logic.NegativeAmountError:
-        res = "Невірна сума"
+        messagebox.showerror("Помилка",
+                             "Від'ємне значення",
+                             parent=root)
 
-    usrval.set(str(res))
 
 usrval = tkinter.StringVar(value="81.8 USD")
 inpvalfield = tkinter.Entry(root)#, textvariable=usrval)
 inpvalfield['textvariable'] = usrval
 inpvalfield.pack()
 
+cto = tkinter.ttk.Combobox(root, values=["USD", "EUR", "UAH"])
+cto.pack()
 
 btn = tkinter.Button(root, text="Конвертувати", pady=20, padx=50)
 btn['command'] = btn_onlick
