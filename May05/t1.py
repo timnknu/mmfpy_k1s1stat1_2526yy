@@ -4,9 +4,11 @@ root = tkinter.Tk()
 
 def btn_onlick():
     print("Button was clicked!")
+    usrval.set('HELLO')
 
-
-inpvalfield = tkinter.Entry(root)
+usrval = tkinter.StringVar(value="початкове значення")
+inpvalfield = tkinter.Entry(root)#, textvariable=usrval)
+inpvalfield['textvariable'] = usrval
 inpvalfield.pack()
 
 
