@@ -8,7 +8,14 @@ def btn_onlick():
     print("Button was clicked!", usrval.get())
 
     s = usrval.get()
-    res = curr_conv_logic.convert_currencies(s)
+    try:
+        res = curr_conv_logic.convert_currencies(s)
+    except curr_conv_logic.InvalidFormatError:
+        res = "Невірний формат"
+    except curr_conv_logic.UnknownCurrencyError:
+        res = "Невідома валюта"
+    except curr_conv_logic.NegativeAmountError:
+        res = "Невірна сума"
 
     usrval.set(str(res))
 
