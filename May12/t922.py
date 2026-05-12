@@ -16,18 +16,23 @@ class FileReader:
 # Виведіть усі прочитані рядки на екран;
 class WordPrinter:
     def onReceive(self, line):
-        pass
+        print('WordPrinter:', line)
 
 # Підрахуйте v слів у текстовому файлі;
 class WordCounter:
     def onReceive(self, line):
-        pass
+        print('WordCounter', len(line.split()))
 
-# Перевірте чи містить текстовий файл задане слово.
+# Перевірте чи містить текстовий рядок задане слово.
 class WordChecker:
     def onReceive(self, line):
-        pass
+        words = line.split()
+        res = 'spam' in words
+        print('WordChecker', res)
 
+class LengthEvaluator:
+    def get_len(self, line):
+        print('LengthEvaluator', len(line))
 ####
 
 if __name__ == "__main__":
@@ -35,11 +40,13 @@ if __name__ == "__main__":
     wwriter = WordPrinter()
     wcounter = WordCounter()
     wchecker = WordChecker()
+    le = LengthEvaluator()
 
     obj = FileReader()
 
     obj.subscribe(wwriter)
     obj.subscribe(wcounter)
     obj.subscribe(wchecker)
+    obj.subscribe(le)
 
     obj.run('inp.txt')
